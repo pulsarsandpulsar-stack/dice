@@ -1,67 +1,85 @@
-# Privacy Policy
+🎲 Dice
+Privacy Policy
+Terms of Use
+Legal Documents
+Last updated: June 21, 2026
+🔒 Privacy Policy
+📋 Terms of Use
+🔒
+Privacy Policy
+Effective date: June 21, 2026 · Dice App
+We believe in transparency. This policy explains exactly what we collect, why, and how.
+1. INTRODUCTION
 
-_Last updated: 4 June 2026_
+Dice ("we," "us," or "our") is a dice-rolling utility for iOS and macOS. This Privacy Policy describes how we handle information when you use the app. By using Dice, you agree to the practices described in this policy.
 
-This Privacy Policy describes how the **Dice** app ("the App", "we", "us")
-handles information when you use it on iPhone, iPad, or Mac.
+We do not require an account, we do not ask for your name or email, and we do not sell your data. The sections below explain the limited diagnostic data the app sends to help us keep it stable, and the local data the app stores on your device.
+2. INFORMATION WE COLLECT
 
-## TL;DR
+Dice is designed to be minimally invasive. The data we collect is limited to:
 
-Dice does not collect, transmit, sell, or share any personal data. Everything
-you do in the app stays on your device.
+Crash reports & performance diagnostics — automatically collected via Firebase Crashlytics and Firebase Performance Monitoring if the app crashes or experiences a performance issue. Reports typically include device model, OS version, app version, language/region, an anonymous installation identifier, and a stack trace. They do not include your name, email, or any personal identifier you have entered.
+Anonymous usage analytics — collected via Firebase Analytics. This includes aggregate data such as which screens are viewed, how often features are used, session duration, and general device/OS type. This data is not linked to your real-world identity.
+Remote configuration — the app downloads small configuration values (such as how often we show the rating prompt) via Firebase Remote Config. These downloads do not include any personal information from you.
+3. INFORMATION STORED LOCALLY ON YOUR DEVICE
 
-## What we collect
+The following data is stored only on your device — it is never transmitted to us:
 
-**Nothing that leaves your device.** Specifically:
+Custom dice you create and saved roll presets (stored via Apple SwiftData)
+App preferences such as theme, sound pack, haptics toggle, and sound toggle
+Your lifetime roll count and the date of the last rating prompt
+A cached flag indicating whether your Dice Pro subscription is active
+This information is removed when you delete the app.
+4. INFORMATION WE DO NOT COLLECT
 
-- **No accounts.** The App has no sign-in, no user profiles, no servers.
-- **No analytics.** We do not use Google Analytics, Firebase, Mixpanel, or
-  any other analytics SDK.
-- **No advertising.** No ads, no ad SDKs, no IDFA access, no tracking.
-- **No third-party SDKs** beyond Apple's own frameworks (StoreKit, SwiftUI,
-  SwiftData).
-- **No crash reporting** beyond Apple's standard system-level diagnostics
-  (which you control in iOS / macOS Settings under Privacy & Security >
-  Analytics & Improvements).
+Your name, email address, or any contact information
+Location data (precise or approximate)
+Camera, microphone, or photo library access
+Contacts, calendars, or health data
+Payment or financial information (purchases are processed entirely by Apple — see Section 7)
+Advertising identifiers (IDFA), and we do not use any advertising SDKs or ad networks
+App Tracking Transparency tracking — Dice does not track you across apps or websites
+5. HOW WE USE THIS INFORMATION
 
-## What stays on your device
+To diagnose and fix crashes and performance regressions
+To understand which features are used so we can prioritize improvements
+To deliver remote configuration that tunes the app's behavior without requiring an update
+To verify and restore your Dice Pro subscription on this and your other Apple devices
+We do not sell, trade, rent, or share your data with third parties for marketing purposes.
+6. THIRD-PARTY SERVICES
 
-The App stores the following locally using Apple's standard storage APIs
-(`UserDefaults` and SwiftData). This data never leaves your device:
+Dice uses the following third-party services. Data they collect is governed by their own privacy policies:
 
-- Your settings (sound on/off, haptics, theme, sound pack).
-- Custom dice you create.
-- Saved roll presets (Dice Pro feature).
-- Your roll tally (a count of past rolls per die, used for the Tally screen
-  and Pro histograms).
-- The cached "is Pro subscriber" flag, used so Pro features stay unlocked
-  offline.
+Google Firebase — Analytics, Crashlytics, Performance Monitoring, and Remote Config. See Firebase Privacy and the Google Privacy Policy.
+Apple StoreKit / App Store — used to process Dice Pro subscription purchases and to validate and restore your entitlement. See the Apple Privacy Policy.
+We do not use advertising SDKs or ad networks.
+7. IN-APP PURCHASES & SUBSCRIPTIONS
 
-Deleting the App removes all of this data.
+Dice Pro is an auto-renewable subscription sold through the Apple App Store. All payment information is collected and processed by Apple — we never see your payment method, name, or billing address. Apple shares with us only the information required to confirm that you have an active subscription on your Apple ID.
+8. DATA RETENTION
 
-## Subscriptions and payments
+Crash reports, performance traces, and analytics are retained by Firebase for the minimum period necessary to diagnose and resolve issues — typically no longer than 14 months for Analytics and 90 days for Crashlytics. Aggregated, anonymized statistics may be retained indefinitely as they cannot identify any individual.
+9. CHILDREN'S PRIVACY
 
-Dice Pro is sold as an auto-renewing subscription through Apple's App
-Store. Apple — not us — processes the payment. We never see your payment
-details or Apple ID.
+Dice does not knowingly collect personal information from children under 13. The app does not require account creation and collects only anonymous diagnostic data. If you believe a child has provided personal information through the app, please contact us and we will take reasonable steps to delete it.
+10. YOUR RIGHTS
 
-We use Apple's StoreKit 2 framework to:
+Because we do not collect personal information tied to your real-world identity, there is generally nothing for us to access, correct, or delete on your behalf. You can control diagnostic and analytics sharing at the operating system level:
 
-- Show you the current price.
-- Verify your subscription is active.
-- Restore your subscription on a new device.
+iOS / iPadOS: Settings → Privacy & Security → Analytics & Improvements → Share With App Developers
+macOS: System Settings → Privacy & Security → Analytics & Improvements → Share With App Developers
+If you reside in the European Economic Area, the United Kingdom, or California, you may have additional rights under the GDPR, UK GDPR, or the CCPA/CPRA respectively — including the right to request access to or deletion of any personal data we hold about you. Contact us using the email below to exercise these rights.
+11. SECURITY
 
-Information about your subscription is handled under
-[Apple's Privacy Policy](https://www.apple.com/legal/privacy/).
+Data sent to Firebase and Apple is transmitted over encrypted connections (HTTPS / TLS). Locally stored data lives within the app's sandbox on your device. However, no transmission over the internet or storage system is 100% secure.
+12. INTERNATIONAL DATA TRANSFERS
 
-## Children's privacy
+Firebase and Apple may process diagnostic data on servers located outside your country, including in the United States. By using the app, you consent to this transfer where required.
+13. CHANGES TO THIS POLICY
 
-The App does not knowingly collect any data from anyone, including children
-under 13.
+We may update this Privacy Policy from time to time. We will update the "Effective Date" at the top of this page when changes are made. Continued use of the app after any changes constitutes acceptance of the updated policy.
+Questions about this Privacy Policy?
 
-## Changes to this policy
-
-If we change this policy, we'll update the "Last updated" date at the top
-and post the new version at the same URL. Continuing to use the App after
-a change means you accept it.
-
+pulsarsandpulsar@gmail.com
+© 2026 Dice. All rights reserved.
+Privacy Policy Terms of Use
