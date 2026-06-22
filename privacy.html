@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Dice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f5f7;
+      --surface: #ffffff;
+      --surface-secondary: #f9f9fb;
+      --border: #e5e5ea;
+      --text-primary: #1d1d1f;
+      --text-secondary: #6e6e73;
+      --text-tertiary: #aeaeb2;
+      --accent: #1d1d1f;
+      --accent-light: #f2f2f2;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --shadow: 0 2px 20px rgba(0,0,0,0.06);
+      --shadow-md: 0 8px 40px rgba(0,0,0,0.10);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 16px;
+      min-height: 100vh;
+    }
+
+    /* ── Top nav ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(245,245,247,0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .nav-brand .logo {
+      width: 28px;
+      height: 28px;
+      background: var(--text-primary);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-dots {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      padding: 5px;
+    }
+
+    .logo-dot {
+      width: 5px;
+      height: 5px;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text-primary); background: var(--accent-light); }
+    .nav-links a.active { color: var(--text-primary); background: var(--accent-light); }
+
+    /* ── Hero band ── */
+    .hero {
+      background: var(--text-primary);
+      color: white;
+      padding: 64px 24px 56px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: white;
+    }
+
+    .hero-meta {
+      margin-top: 16px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      font-weight: 400;
+    }
+
+    /* ── Main layout ── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 96px;
+    }
+
+    /* ── TOC card ── */
+    .toc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 48px;
+      box-shadow: var(--shadow);
+    }
+
+    .toc-card h2 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 24px;
+    }
+
+    @media (max-width: 540px) {
+      .toc-list { grid-template-columns: 1fr; }
+    }
+
+    .toc-list li a {
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 0;
+      transition: color 0.15s;
+    }
+
+    .toc-list li a:hover { color: var(--text-primary); }
+
+    .toc-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      min-width: 20px;
+    }
+
+    /* ── Intro blurb ── */
+    .intro-blurb {
+      background: var(--surface-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .intro-blurb strong { color: var(--text-primary); font-weight: 600; }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 52px;
+      scroll-margin-top: 72px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-tertiary);
+      letter-spacing: 0.04em;
+      min-width: 28px;
+    }
+
+    .section h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .section p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── bullet lists ── */
+    .section ul {
+      list-style: none;
+      margin: 12px 0;
+    }
+
+    .section ul li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      padding: 6px 0 6px 20px;
+      position: relative;
+    }
+
+    .section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 5px;
+      height: 5px;
+      background: var(--text-tertiary);
+      border-radius: 50%;
+    }
+
+    .section ul li strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* ── Sub-lists (OS settings) ── */
+    .sub-list {
+      background: var(--surface-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px 14px 18px;
+      margin: 8px 0;
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .sub-list code {
+      font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
+      font-size: 12.5px;
+      background: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 5px;
+      color: var(--text-primary);
+    }
+
+    /* ── highlight boxes ── */
+    .info-box {
+      background: #f0f7ff;
+      border: 1px solid #c8e0ff;
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: #1d3f6e;
+      line-height: 1.6;
+    }
+
+    /* ── links ── */
+    a { color: var(--text-primary); text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { opacity: 0.7; }
+
+    /* ── footer / contact band ── */
+    .contact-band {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      margin-top: 64px;
+    }
+
+    .contact-band h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .contact-band p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      background: var(--text-primary);
+      color: white;
+      text-decoration: none;
+      padding: 11px 24px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: opacity 0.15s;
+    }
+
+    .contact-btn:hover { opacity: 0.8; color: white; }
+
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    footer a { color: var(--text-tertiary); }
+
+    @media (max-width: 600px) {
+      .toc-card { padding: 20px; }
+      nav { padding: 0 16px; }
+      main { padding: 32px 16px 64px; }
+      .hero { padding: 48px 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="nav-brand" href="index.html">
+      <div class="logo">
+        <div class="logo-dots">
+          <div class="logo-dot"></div><div class="logo-dot"></div>
+          <div class="logo-dot"></div><div class="logo-dot"></div>
+        </div>
+      </div>
+      Dice
+    </a>
+    <div class="nav-links">
+      <a href="privacy.html" class="active">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">Legal</div>
+  <h1>Privacy Policy</h1>
+  <div class="hero-meta">Effective date: June 21, 2026 &nbsp;·&nbsp; Dice for iOS &amp; macOS</div>
+</div>
+
+<main>
+
+  <div class="intro-blurb">
+    <strong>We believe in transparency.</strong> Dice is a dice-rolling utility — not an ad platform. We do not require an account, we do not ask for your name or email, and we do not sell your data. This policy explains the limited diagnostic data the app sends to help us keep it stable, and the local data stored on your device.
+  </div>
+
+  <div class="toc-card" role="navigation" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ul class="toc-list">
+      <li><a href="#s1"><span class="toc-num">01</span>Introduction</a></li>
+      <li><a href="#s2"><span class="toc-num">02</span>Information We Collect</a></li>
+      <li><a href="#s3"><span class="toc-num">03</span>Stored Locally on Device</a></li>
+      <li><a href="#s4"><span class="toc-num">04</span>What We Do NOT Collect</a></li>
+      <li><a href="#s5"><span class="toc-num">05</span>How We Use This Information</a></li>
+      <li><a href="#s6"><span class="toc-num">06</span>Third-Party Services</a></li>
+      <li><a href="#s7"><span class="toc-num">07</span>In-App Purchases</a></li>
+      <li><a href="#s8"><span class="toc-num">08</span>Data Retention</a></li>
+      <li><a href="#s9"><span class="toc-num">09</span>Children's Privacy</a></li>
+      <li><a href="#s10"><span class="toc-num">10</span>Your Rights</a></li>
+      <li><a href="#s11"><span class="toc-num">11</span>Security</a></li>
+      <li><a href="#s12"><span class="toc-num">12</span>International Transfers</a></li>
+      <li><a href="#s13"><span class="toc-num">13</span>Changes to This Policy</a></li>
+    </ul>
+  </div>
+
+  <!-- Section 1 -->
+  <section class="section" id="s1">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>Introduction</h2>
+    </div>
+    <p>Dice ("we," "us," or "our") is a dice-rolling utility for iOS and macOS. This Privacy Policy describes how we handle information when you use the app. By using Dice, you agree to the practices described in this policy.</p>
+    <p>We do not require an account, we do not ask for your name or email, and we do not sell your data. The sections below explain the limited diagnostic data the app sends to help us keep it stable, and the local data the app stores on your device.</p>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="section" id="s2">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>Information We Collect</h2>
+    </div>
+    <p>Dice is designed to be minimally invasive. The data we collect is limited to:</p>
+    <ul>
+      <li><strong>Crash reports &amp; performance diagnostics</strong> — automatically collected via Firebase Crashlytics and Firebase Performance Monitoring if the app crashes or experiences a performance issue. Reports typically include device model, OS version, app version, language/region, an anonymous installation identifier, and a stack trace. They do <em>not</em> include your name, email, or any personal identifier you have entered.</li>
+      <li><strong>Anonymous usage analytics</strong> — collected via Firebase Analytics. This includes aggregate data such as which screens are viewed, how often features are used, session duration, and general device/OS type. This data is not linked to your real-world identity.</li>
+      <li><strong>Remote configuration</strong> — the app downloads small configuration values (such as how often we show the rating prompt) via Firebase Remote Config. These downloads do not include any personal information from you.</li>
+    </ul>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="section" id="s3">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>Information Stored Locally on Your Device</h2>
+    </div>
+    <p>The following data is stored only on your device — it is never transmitted to us:</p>
+    <ul>
+      <li>Custom dice you create and saved roll presets (stored via Apple SwiftData)</li>
+      <li>App preferences such as theme, sound pack, haptics toggle, and sound toggle</li>
+      <li>Your lifetime roll count and the date of the last rating prompt</li>
+      <li>A cached flag indicating whether your Dice Pro subscription is active</li>
+    </ul>
+    <p>This information is removed when you delete the app.</p>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="section" id="s4">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Information We Do NOT Collect</h2>
+    </div>
+    <ul>
+      <li>Your name, email address, or any contact information</li>
+      <li>Location data (precise or approximate)</li>
+      <li>Camera, microphone, or photo library access</li>
+      <li>Contacts, calendars, or health data</li>
+      <li>Payment or financial information (purchases are processed entirely by Apple — see Section 7)</li>
+      <li>Advertising identifiers (IDFA), and we do not use any advertising SDKs or ad networks</li>
+      <li>App Tracking Transparency tracking — Dice does not track you across apps or websites</li>
+    </ul>
+  </section>
+
+  <!-- Section 5 -->
+  <section class="section" id="s5">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>How We Use This Information</h2>
+    </div>
+    <ul>
+      <li>To diagnose and fix crashes and performance regressions</li>
+      <li>To understand which features are used so we can prioritize improvements</li>
+      <li>To deliver remote configuration that tunes the app's behavior without requiring an update</li>
+      <li>To verify and restore your Dice Pro subscription on this and your other Apple devices</li>
+    </ul>
+    <p>We do not sell, trade, rent, or share your data with third parties for marketing purposes.</p>
+  </section>
+
+  <!-- Section 6 -->
+  <section class="section" id="s6">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2>Third-Party Services</h2>
+    </div>
+    <p>Dice uses the following third-party services. Data they collect is governed by their own privacy policies:</p>
+    <ul>
+      <li><strong>Google Firebase</strong> — Analytics, Crashlytics, Performance Monitoring, and Remote Config. See <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy</a> and the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
+      <li><strong>Apple StoreKit / App Store</strong> — used to process Dice Pro subscription purchases and to validate and restore your entitlement. See the <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>.</li>
+    </ul>
+    <p>We do not use advertising SDKs or ad networks.</p>
+  </section>
+
+  <!-- Section 7 -->
+  <section class="section" id="s7">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <h2>In-App Purchases &amp; Subscriptions</h2>
+    </div>
+    <p>Dice Pro is an auto-renewable subscription sold through the Apple App Store. All payment information is collected and processed by Apple — we never see your payment method, name, or billing address. Apple shares with us only the information required to confirm that you have an active subscription on your Apple ID.</p>
+  </section>
+
+  <!-- Section 8 -->
+  <section class="section" id="s8">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <h2>Data Retention</h2>
+    </div>
+    <p>Crash reports, performance traces, and analytics are retained by Firebase for the minimum period necessary to diagnose and resolve issues — typically no longer than 14 months for Analytics and 90 days for Crashlytics. Aggregated, anonymized statistics may be retained indefinitely as they cannot identify any individual.</p>
+  </section>
+
+  <!-- Section 9 -->
+  <section class="section" id="s9">
+    <div class="section-header">
+      <span class="section-num">09</span>
+      <h2>Children's Privacy</h2>
+    </div>
+    <p>Dice does not knowingly collect personal information from children under 13. The app does not require account creation and collects only anonymous diagnostic data. If you believe a child has provided personal information through the app, please contact us and we will take reasonable steps to delete it.</p>
+  </section>
+
+  <!-- Section 10 -->
+  <section class="section" id="s10">
+    <div class="section-header">
+      <span class="section-num">10</span>
+      <h2>Your Rights</h2>
+    </div>
+    <p>Because we do not collect personal information tied to your real-world identity, there is generally nothing for us to access, correct, or delete on your behalf. You can control diagnostic and analytics sharing at the operating system level:</p>
+    <div class="sub-list">
+      <strong>iOS / iPadOS:</strong><br/>
+      <code>Settings → Privacy &amp; Security → Analytics &amp; Improvements → Share With App Developers</code>
+    </div>
+    <div class="sub-list">
+      <strong>macOS:</strong><br/>
+      <code>System Settings → Privacy &amp; Security → Analytics &amp; Improvements → Share With App Developers</code>
+    </div>
+    <p>If you reside in the European Economic Area, the United Kingdom, or California, you may have additional rights under the GDPR, UK GDPR, or the CCPA/CPRA respectively — including the right to request access to or deletion of any personal data we hold about you. Contact us using the email below to exercise these rights.</p>
+  </section>
+
+  <!-- Section 11 -->
+  <section class="section" id="s11">
+    <div class="section-header">
+      <span class="section-num">11</span>
+      <h2>Security</h2>
+    </div>
+    <p>Data sent to Firebase and Apple is transmitted over encrypted connections (HTTPS / TLS). Locally stored data lives within the app's sandbox on your device. However, no transmission over the internet or storage system is 100% secure.</p>
+  </section>
+
+  <!-- Section 12 -->
+  <section class="section" id="s12">
+    <div class="section-header">
+      <span class="section-num">12</span>
+      <h2>International Data Transfers</h2>
+    </div>
+    <p>Firebase and Apple may process diagnostic data on servers located outside your country, including in the United States. By using the app, you consent to this transfer where required.</p>
+  </section>
+
+  <!-- Section 13 -->
+  <section class="section" id="s13">
+    <div class="section-header">
+      <span class="section-num">13</span>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time. We will update the "Effective Date" at the top of this page when changes are made. Continued use of the app after any changes constitutes acceptance of the updated policy.</p>
+  </section>
+
+  <!-- Contact -->
+  <div class="contact-band">
+    <h3>Questions about this Privacy Policy?</h3>
+    <p>We're happy to clarify anything. Reach out anytime.</p>
+    <a class="contact-btn" href="mailto:pulsarsandpulsar@gmail.com">pulsarsandpulsar@gmail.com</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Dice &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Use</a></p>
+</footer>
+
+</body>
+</html>
